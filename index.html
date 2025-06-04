@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
+    <link rel="stylesheet" href="/css/simple-card.css">
 </head>
 <body>
    <form action="" method="get">
@@ -19,9 +20,21 @@
     <div>
     </div>
    </form>
+
+   <form action="" method="post" name="register">
+        <input type="text" name="name" placeholder="your account Fullname" ><br>
+        <input type="email" name="email" placeholder="your account Email" ><br>
+        <input type="password" name="password" placeholder="Enter Password" ><br>
+        <button type="button" onclick="Register()">Register</button>
+        <div>
+        </div>
+   </form>
+
    <h3>JS BTN</h3>
    <button id="js_btn">Test</button>
    <div id="js_out">No Output Yet</div>
+
+
 </body>
     <script src="/js/main.js"></script>
 </html>

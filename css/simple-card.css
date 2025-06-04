@@ -1,0 +1,14 @@
+.simple-card{
+    display:flex;
+    height: 110px;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgba(128, 128, 128, 0.717);
+    border-radius: 8px;   
+}
+.simple-card > div > span{
+    display: block;
+    font-family:  sans-serif;
+    margin: 5px;
+    
+}
