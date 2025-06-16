@@ -58,11 +58,29 @@ function Register(){
             email:email,
             password:password
         })
-    }).then(res=>{
-        if(res.ok){
-            alert("User Created");
-        }else{
-            alert("Failed to Create User");
+    }).then(res=>res.json()).then(data=>{
+        if(data.message){
+            alert(data.message)
+        }
+    })
+
+}
+
+
+function Login(){
+    var form = document.forms["login"];
+    var email = form["email"].value;
+    var password = form["password"].value;
+
+    fetch("/api/login.php",{
+        method : "POST",
+        body: JSON.stringify({
+            email:email,
+            password:password
+        })
+    }).then(res=>res.json()).then(data=>{
+        if(data.message){
+            alert(data.message)
         }
     })
 

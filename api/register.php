@@ -1,10 +1,15 @@
 <?php
+include __DIR__."./lib/const.php";
 include __DIR__."./lib/connection.php";
+include __DIR__."./lib/response_builder.php";
+
+
+
 
 $body = file_get_contents("php://input");
 
 $data = json_decode($body, true);
-var_dump($data );
+//var_dump($data );
 
 // Unpack
 // Hash Password
@@ -12,7 +17,11 @@ var_dump($data );
 $name = $data["name"];
 $email = $data["email"];
 $password = $data["password"];
-// Validate
+
+if(preg_match(EMAIL_REGEX, $email)<1){
+    respond(false, 400, "Validation Error: The Email Entered is not Valid");
+}
+// Validate pwd and email RegEx
 $password = password_hash($password, PASSWORD_DEFAULT);
 
 $cols = [
@@ -28,7 +37,8 @@ $stmt = $db->prepare($query);
 
 $executed = $stmt->execute(array_values($cols));
 if($executed){
-    http_response_code(200);
-    exit();
+    respond(true, 200, "Created");
+ 
 }
-http_response_code(400);
+respond(false, 500, "Failed To Create");
+
