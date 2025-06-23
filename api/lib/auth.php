@@ -7,6 +7,7 @@ class User{
     public int $id;
     public string $fullname;
     public string $email;
+    public ?string $profile_img = "https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png";
     public ?DateTime $loggedin;
     
     public function __construct(?int $id, ?bool $loggingIn = false) {
@@ -37,7 +38,7 @@ class User{
 
 
     public static function GetCurrentUser():User{
-        return $_SESSION["user"]; 
+        return new User($_SESSION["user"]->id); 
     }
 
 

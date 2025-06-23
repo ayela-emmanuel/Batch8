@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="/css/profile.css">
 </head>
 <body>
-    
+<div id="edit_handle"  class="hide">
+    <section class="blur_cover"></section>
+    <div id="edit_modal" >
+        <form action="" method="post" name="register">
+            <h3>EDIT PROFILE</h3><br>
+            <img class="content-user-img" src="person.png" alt="" height="100" width="100" /><br>
+
+            <input type="text" name="name" placeholder="your account Fullname" ><br>
+            <input type="email" name="email" placeholder="your account Email" ><br>
+            <input type="password" name="password" placeholder="Enter Password" ><br>
+            <button type="button" onclick="save()">Save</button>
+            <button type="button" onclick="_close()" style="color:white;background-color: crimson;">Close</button>
+            <div>
+            </div>
+    </form>
+
+    </div>
+</div>
+
+ <h1 class="content-user-name" style="text-transform: uppercase;">placeholder</h1><br/>
+    <div class="card">
+        <div>
+            <img class="content-user-img" src="person.png" alt="" height="200" width="200" />
+        </div>
+        <div>
+            id: <span id="id"></span><br/> 
+            name: <span class="content-user-name"></span><br/>
+            email: <span id="email"></span>
+        </div>
+        <button onClick="edit_profile()">edit</button>
+    </div>
+
+
 </body>
 <script src="./js/user.js" ></script>
 </html>
