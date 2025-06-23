@@ -33,7 +33,7 @@ if($executed){
         $_SESSION["user"] = new User($user["id"],true);
         respond(true, 200, "Loggedin");
     }else{
-        respond(true, 401, "Invalid Credentials!");
+        respond(false, 401, "Invalid Credentials!");
 
     }
 }

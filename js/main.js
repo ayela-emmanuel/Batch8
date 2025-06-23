@@ -82,6 +82,9 @@ function Login(){
         if(data.message){
             alert(data.message)
         }
+        if(data.result){
+            window.location = "/home.html";
+        }
     })
 
 }
